@@ -15,6 +15,7 @@ def adding_time(lines, time):
 def convert(files, cols):
 	index = 1
 	for file in files:
+		deleted_part = '.xlsx'
 		lines = 0
 		per = []
 		time = []
@@ -24,8 +25,8 @@ def convert(files, cols):
 		df.insert(1, 'per', adding_per(lines, per))
 		df.insert(3, 'time', adding_time(lines, time))
 		df.columns = ["<TICKER>","<PER>","<DATE>","<TIME>","<OPEN>","<HIGH>","<LOW>","<CLOSE>","<VOL>"]
-		df.to_csv("export/"+file+".csv", index=False)
-		print(str(index)+ "/"+ str(len(files)) + " File " + str(file) + " done!")
+		df.to_csv("export/"+(file.split('.xlsx')[0])+".csv", index=False)
+		print(str(index)+ "/"+ str(len(files)) + " File " + file + " done!")
 		index += 1
 
 if __name__ == '__main__':
