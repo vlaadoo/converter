@@ -21,15 +21,6 @@ print(lines)
 df.insert(1, 'per', adding_per(lines, per))
 df.insert(3, 'time', adding_time(lines, time))
 df.columns = ["<TICKER>","<PER>","<DATE>","<TIME>","<OPEN>","<HIGH>","<LOW>","<CLOSE>","<VOL>"]
-# print(df)
+
 
 df.to_csv("test.csv", index=False)
-
-
-
-# columns = df[['quandl_code','date','open','high','low','settle','volume']]
-# new_df = columns.copy
-# df.to_csv("test.csv", )
-# csv = pd.read_csv("test.csv", )
-# print(csv)
-# print(new_df)
